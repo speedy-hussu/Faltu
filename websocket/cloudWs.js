@@ -1,3 +1,4 @@
+// cloudWs.js
 let cloudClients = [];
 
 const setupCloudWebSocket = (wss) => {
@@ -8,7 +9,7 @@ const setupCloudWebSocket = (wss) => {
     cloudClients.push(ws);
 
     ws.on("message", (msg) => {
-      console.log("🌐 Received from Local:", msg);
+      console.log("🌐 Received from Local:", msg.toString());
     });
 
     ws.on("close", () => {
@@ -18,7 +19,9 @@ const setupCloudWebSocket = (wss) => {
   });
 };
 
+const getCloudClients = () => cloudClients; // ✅ Add getter
+
 module.exports = {
   setupCloudWebSocket,
-  cloudClients,
+  getCloudClients, // ✅ Export getter instead
 };
