@@ -5,11 +5,11 @@ const { WebSocketServer } = require("ws");
 
 dotenv.config();
 
-const connectDB = require("./db/connect");
+const connectDB = require("./db/db.connect");
 const app = require("./app");
 
 const { setupCloudWebSocket, cloudClients } = require("./websocket/cloudWs");
-const orderController = require("./controllers/orderController");
+const orderController = require("./controller/order.controller");
 
 connectDB();
 

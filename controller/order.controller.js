@@ -1,4 +1,4 @@
-const Order = require("../models/Order");
+const Order = require("../model/order.model");
 let cloudWsClients = []; // Will be assigned in cloudWs.js
 
 exports.setCloudClientsRef = (ref) => {
